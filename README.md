@@ -54,10 +54,10 @@
 ### Symmetric Encryption
 
 - Block Ciphers
-	- DES
+	- DESkPBKDF2
 	- Blowfish
 	- AES (128/192/256)
-- Block Cipher Encryption Modes
+- AES Encryption Modes
 	- ECB
 	- CTR
 	- CBC
@@ -65,14 +65,26 @@
 - Padding
 
 #### AES ECB
-
 - Electronic Codebook Mode
+- Block cipher
 - INSECURE
 - Each block is encrypted independenly
 - Matching plaintext blocks produce matching ciphertext blocks
 - <i>C<sub>i</sub> = E(K,P<sub>i</sub>) for i,...,k</i>
 
-#### AES OFB
+#### AES CBC
+- Cipher Block Chaining
+- Block cipher
+- Secure
+- IV or ciphertext is XORed with plaintext prior to AES encryption
+- 
+
+#### AES CTR
+- Counter mode
+- Stream cipher
+- Secure
+- Each bit is XORed with a stream produced by CTR-DRNG
+- Parallelizable; Catastrophic when reusing IV
 - 
 
 #### IVs
@@ -130,7 +142,8 @@
 
 ---
 
-### Signatures
+### Signatures...
+
 
 - 
 
@@ -173,3 +186,9 @@ INSERT DIAGRAM
 ### Application Logic
 
 ### 
+
+## Resources
+
+| Title | Author | URL |
+|---|---|---|
+| Evaluation of Some Blockcipher Modes of Operation | Phillip Rogaway University of California | http://web.cs.ucdavis.edu/~rogaway/papers/modes.pdf |
