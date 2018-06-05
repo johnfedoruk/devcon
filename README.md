@@ -3,7 +3,6 @@
 - Hashes
 - Symmetric Encryption
 - Asymmetric Encryption
-- Padding
 - Message Authentication Codes
 - Signatures
 - Secure Channels
