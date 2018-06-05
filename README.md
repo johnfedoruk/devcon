@@ -144,9 +144,26 @@
 ---
 
 ### Signatures...
+- Digital signatures
+- Code signature
+- Digital certificates
 
+#### Digital Signatures
+- Integrity and authenticity
+- Non-repudiation
+- Generated with private key
+- Validated with public key
 
+#### Code Signature
 - 
+
+#### Digital Cerfiticates
+- X.509
+- Contains
+	- Public key
+	- Identification information
+	- Issuers name
+	- Issuers signature
 
 ---
 
