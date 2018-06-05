@@ -180,30 +180,12 @@ INSERT DIAGRAM
 
 ---
 
-## JavaScript Crypography Libraries
-
-- Libraries
-	- Node Forge
-	- CryptoJS
-	- NodeJS Crypto Module (Server only)
-	- Web Standards
-- Can I use?
-- Features / Limitations
-	- Supported algorithms
-	- Ease of use
-	- Quirks
-- Audit reports
-
-###  
-
 ## Demo
 
 - Written in Anuglar + TypeScript
 - Code on GitHub /microupoad
 
 ### Application Logic
-
-### 
 
 ## Resources
 
