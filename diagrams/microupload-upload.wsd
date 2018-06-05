@@ -1,0 +1,22 @@
+@startuml Microupload
+skinparam monochrome true
+skinparam backgroundcolor transparent
+
+actor Bob
+actor Alice
+
+Bob --> Alice: Public key
+
+==Upload==
+
+Alice --> Browser: File upload
+Alice --> Browser: Bob's public key
+Browser --> Browser: Read file into Blob
+Browser --> Browser: Generate 32B key
+Browser --> Browser: Generate 16B iv
+Browser --> Browser: enc_file = AES.encrypt(file,key,iv)
+Browser --> Browser: enc_key = RSA.encrypt(key,pub)
+Browser --> Server: enc_file, enc_key, iv, metadata
+Server --> Browser: Unique download url
+
+@enduml
