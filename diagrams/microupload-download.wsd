@@ -1,0 +1,20 @@
+@startuml Microupload
+skinparam monochrome true
+skinparam backgroundcolor transparent
+
+actor Alice
+actor Bob
+
+Alice --> Bob: Download url
+
+==Download==
+
+Server --> Browser: enc_file, enc_key, iv, metadata
+Bob --> Browser: Bob's private key
+Browser --> Browser: Generate 32B key
+Browser --> Browser: key = RSA.decrypt(enc_key,priv)
+Browser --> Browser: file = AES.decrypt(file,key,iv)
+Browser --> Browser: Generate file from Blob
+Browser --> Bob: File
+
+@enduml
