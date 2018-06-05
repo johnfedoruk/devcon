@@ -1,0 +1,15 @@
+@startuml Code Signature
+skinparam backgroundcolor transparent
+skinparam monochrome true
+== Code Signing ==
+Author --> Author: Hashed
+Author --> Authority: Hash
+Authority --> Author: Signed Hash
+Author --> Consumer: Signing authority X.509, Code, Signed hash
+== Code Verification ==
+Authority --> Consumer: Root certs installed
+Consumer --> Consumer: Code's X.509 validation
+Consumer --> Consumer: Verify hashed code's signature with X.509
+Consumer --> Consumer: Hash code, compare with signed hash
+
+@enduml
