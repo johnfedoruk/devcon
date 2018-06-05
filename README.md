@@ -70,14 +70,15 @@
 - INSECURE
 - Each block is encrypted independenly
 - Matching plaintext blocks produce matching ciphertext blocks
-- <i>C<sub>i</sub> = E(K,P<sub>i</sub>) for i,...,k</i>
+- <i>C<sub>i</sub> = E( K, P<sub>i</sub> ) for i = 1,...,k</i>
 
 #### AES CBC
 - Cipher Block Chaining
 - Block cipher
 - Secure
 - IV or ciphertext is XORed with plaintext prior to AES encryption
-- 
+- <i>C<sub>1</sub> = E( K, P<sub>1</sub> XOR IV )</i>
+- <i>C<sub>i</sub> = E( K, P<sub>i</sub> XOR C<sub>i-1</sub> ) for i = 2,...,k</i>
 
 #### AES CTR
 - Counter mode
@@ -85,7 +86,8 @@
 - Secure
 - Each bit is XORed with a stream produced by CTR-DRNG
 - Parallelizable; Catastrophic when reusing IV
-- 
+- <i>K<sub>i</sub> = E( K, IV || i )</i> for i = 1,...,k</i>
+- <i>C<sub>i</sub> = P<sub>i</sub> XOR K<sub>i</sub> for i = 1,...,k</i>
 
 #### IVs
 
