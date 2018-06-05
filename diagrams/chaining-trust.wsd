@@ -1,0 +1,63 @@
+@startuml Trust Chain
+skinparam monochrome true
+skinparam backgroundcolor transparent
+folder "Entity Certificate" as Cert1 {
+	node "Name" as Name1 {
+
+	}
+	node "Public Key" as Pub1 {
+
+	}
+	node "Issuer Name" as Issuer1 {
+
+	}
+	node "Issuer Signature" as Sign1 {
+		
+	}
+}
+folder "Intermediate Certificate" as Cert2 {
+	node "Name" as Name2 {
+
+	}
+	node "Public Key" as Pub2 {
+
+	}
+	node "Issuer Name" as Issuer2 {
+
+	}
+	node "Issuer Signature" as Sign2 {
+		
+	}
+}
+folder "Root Certificate" as Cert3 {
+	node "Name" as Name3 {
+
+	}
+	node "Public Key" as Pub3 {
+
+	}
+	node "Issuer Name" as Issuer3 {
+
+	}
+	node "Issuer Signature" as Sign3 {
+		
+	}
+}
+actor Root
+actor Intermediate
+actor "End Entity" as EE
+
+Root --> Pub3: Generated from private key
+Intermediate --> Pub2: Generated from private key
+EE --> Pub1: Generated from private key
+
+Issuer1 --> Cert2: Reference
+Issuer2 --> Cert3: Reference
+Root <-- Issuer3
+
+Sign1 <-- Intermediate: Signed with private key
+Sign2 <-- Root: Signed with private key
+Root --> Sign3: Self signed
+
+
+@enduml
